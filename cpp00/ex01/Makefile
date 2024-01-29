@@ -1,22 +1,22 @@
 # SETUP
-NAME		:=	megaphone
+NAME		:=	phonebook
 
 CPP			:=	c++
 CPPFLAGS	:=	-Wall -Wextra -Werror
 RM			:=	rm -rf
 
-SRC_DIR		:=	src
-SRC_FILE	:=	megaphone.cpp
-SRC			:=	$(SRC_FILE:%=$(SRC_DIR)/%)
+SRC			:=	PhoneBook.cpp \
+				Contact.cpp \
+				main.cpp
 
 OBJ_DIR		:=	obj
-OBJ			:=	$(SRC_FILE:%.cpp=$(OBJ_DIR)/%.o)
+OBJ			:=	$(SRC:%.cpp=$(OBJ_DIR)/%.o)
 
 INC_DIR		:=	include
 INCLUDE		:=	-I$(INC_DIR)
 
 # RULES
-$(OBJ_DIR)/%.o: $(SRC_DIR)/%.cpp
+$(OBJ_DIR)/%.o: %.cpp
 		@mkdir -p $(OBJ_DIR)
 		$(CPP) $(CPPFLAGS) $(INCLUDE) -c $< -o $@
 
