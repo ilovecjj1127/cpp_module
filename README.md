@@ -8,6 +8,10 @@ scope resolution operator `::`
 	2. define a function outside a class
 	3. access a class's static variables
 
+std::string is a class and std is the namespace where standard library classes and functions are defined.
+`for (char& c: result)` uses a reference(`&`) to the characters
+
+
 ## rules
 
 - UpperCamelCase: class names format

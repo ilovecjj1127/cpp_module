@@ -6,7 +6,7 @@
 /*   By: jiajchen <jiajchen@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/01/29 11:46:36 by jiajchen      #+#    #+#                 */
-/*   Updated: 2024/01/29 17:54:51 by jiajchen      ########   odam.nl         */
+/*   Updated: 2024/01/31 12:37:09 by jiajchen      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ public:
 	// Destructor
 	~Contact(void);
 	// Methods
+	void	print_info(void) const;
 	void	print_contact(void) const;
 
 private:
