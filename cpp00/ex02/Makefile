@@ -1,13 +1,12 @@
 # SETUP
-NAME		:=	phonebook
+NAME		:=	account
 
 CPP			:=	c++
-CPPFLAGS	:=	-Wall -Wextra -Werror
+CPPFLAGS	:=	-Wall -Wextra -Werror -std=c++98
 RM			:=	rm -rf
 
-SRC			:=	PhoneBook.cpp \
-				Contact.cpp \
-				main.cpp
+SRC			:=	Account.cpp \
+				tests.cpp
 
 OBJ_DIR		:=	obj
 OBJ			:=	$(SRC:%.cpp=$(OBJ_DIR)/%.o)
@@ -36,7 +35,7 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all clean fclean re check
+.PHONY: all clean fclean re
 
 # COLORS
 RED		=	\033[1;31m

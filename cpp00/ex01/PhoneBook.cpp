@@ -6,7 +6,7 @@
 /*   By: jiajchen <jiajchen@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/01/29 11:07:32 by jiajchen      #+#    #+#                 */
-/*   Updated: 2024/01/31 14:47:21 by jiajchen      ########   odam.nl         */
+/*   Updated: 2024/02/01 12:00:56 by jiajchen      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,19 +35,19 @@ void	PhoneBook::add_contact()
 	std::string phone_number;
 	std::string darkest_secret;
 
-	std::cout << "First Name:" << std::endl;
+	std::cout << YELLOW << "First Name:" << CLEAR << std::endl;
 	while (first_name.empty())
 		std::cin >> first_name;
-	std::cout << "Last Name:" << std::endl;
+	std::cout << YELLOW << "Last Name:" << CLEAR << std::endl;
 	while (last_name.empty())
 		std::cin >> last_name;
-	std::cout << "Nickame:" << std::endl;
+	std::cout << YELLOW << "Nickame:" << CLEAR << std::endl;
 	while (nickname.empty())
 		std::cin >> nickname;
-	std::cout << "Phone Number:" << std::endl;
+	std::cout << YELLOW << "Phone Number:" << CLEAR << std::endl;
 	while (phone_number.empty())
 		std::cin >> phone_number;
-	std::cout << "Darkest Secret:" << std::endl;
+	std::cout << YELLOW << "Darkest Secret:" << CLEAR << std::endl;
 	while (darkest_secret.empty())
 		std::cin >> darkest_secret;
 	Contact contact(first_name, last_name, nickname, phone_number, darkest_secret);
@@ -64,13 +64,13 @@ void	PhoneBook::search_contact() const
 	int	index;
 
 	this->print_contacts();
-	std::cout << "Enter the index: ";
+	std::cout << GREEN << "\nEnter the index: " << CLEAR;
 	std::cin >> index;
 	if (std::cin.fail() || index >= this->_count || index < 0)
 	{
 		std::cin.clear();
 		std::cin.ignore(10000, '\n');
-		std::cout << "Invalid index!" << std::endl;
+		std::cout << RED << "Invalid index!\n" << CLEAR << std::endl;
 		return ;
 	}
 	this->_contacts[index].print_contact();
@@ -78,10 +78,10 @@ void	PhoneBook::search_contact() const
 
 void	PhoneBook::print_contacts() const
 {
-	std::cout << std::right << std::setw(10) << "index" << "|";
+	std::cout << PINK << std::right << std::setw(10) << "index" << "|";
 	std::cout << std::right << std::setw(10) << "first name" << "|";
 	std::cout << std::right << std::setw(10) << "last name" << "|";
-	std::cout << std::right << std::setw(10) << "nickname" << std::endl;
+	std::cout << std::right << std::setw(10) << "nickname" << CLEAR << std::endl;
 	for (int i = 0; i < this->_count; i++)
 	{
 		std::cout << std::right << std::setw(10) << i << "|";

@@ -6,21 +6,23 @@
 /*   By: jiajchen <jiajchen@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/01/26 13:34:30 by jiajchen      #+#    #+#                 */
-/*   Updated: 2024/01/26 14:40:02 by jiajchen      ########   odam.nl         */
+/*   Updated: 2024/02/01 14:54:34 by jiajchen      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <cctype>
 
-std::string str_toupper(std::string str) {
-	std::string result = str;
+std::string str_toupper(std::string str)
+{
+	int	len;
 
-	for (char& c: result){
-		c = std::toupper(c);
+	len = str.length();
+	for (int i = 0; i < len; i++){
+		str[i] = std::toupper(str[i]);
 	}
 
-	return result;
+	return (str);
 }
 
 int	main(int argc, char **argv)
@@ -31,5 +33,5 @@ int	main(int argc, char **argv)
 		std::cout << str_toupper(argv[i]);
 	}
 	std::cout << std::endl;
-	return 0;
+	return (0);
 }

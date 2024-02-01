@@ -6,7 +6,7 @@
 /*   By: jiajchen <jiajchen@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/01/29 11:34:26 by jiajchen      #+#    #+#                 */
-/*   Updated: 2024/01/31 12:45:27 by jiajchen      ########   odam.nl         */
+/*   Updated: 2024/02/01 11:42:30 by jiajchen      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,10 @@ int	main()
 	
 	while (1)
 	{
-		std::cout << "Please enter: ADD | SEARCH | EXIT" << std::endl;
+		std::cout << YELLOW << "Please enter: ADD | SEARCH | EXIT" << CLEAR << std::endl;
 		std::cin >> input;
+		if (std::cin.eof())
+			break;
 		if (input == "ADD")
 			phonebook.add_contact();
 		else if (input == "SEARCH")

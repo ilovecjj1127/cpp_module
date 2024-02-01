@@ -2,7 +2,7 @@
 NAME		:=	phonebook
 
 CPP			:=	c++
-CPPFLAGS	:=	-Wall -Wextra -Werror
+CPPFLAGS	:=	-Wall -Wextra -Werror -std=c++98
 RM			:=	rm -rf
 
 SRC			:=	PhoneBook.cpp \
@@ -36,7 +36,7 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all clean fclean re check
+.PHONY: all clean fclean re
 
 # COLORS
 RED		=	\033[1;31m
