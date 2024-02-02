@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   Zombie.hpp                                         :+:    :+:            */
+/*   Weapon.hpp                                         :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: jiajchen <jiajchen@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2024/02/01 16:58:08 by jiajchen      #+#    #+#                 */
-/*   Updated: 2024/02/02 12:33:57 by jiajchen      ########   odam.nl         */
+/*   Created: 2024/02/02 15:20:27 by jiajchen      #+#    #+#                 */
+/*   Updated: 2024/02/02 15:29:58 by jiajchen      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_HPP
-# define ZOMBIE_HPP
+#ifndef WEAPON_HPP
+# define WEAPON_HPP
 
 #define RED "\033[91m"
 #define GREEN "\033[92m"
@@ -22,19 +22,18 @@
 
 #include <iostream>
 
-class Zombie
+class Weapon
 {
 private:
-	std::string	_name;
+	std::string _type;
 public:
-	Zombie( void );
-	~Zombie( void );
+	Weapon(/* args */);
+	~Weapon();
 	
-	void	announce( void );
-	void	setName( std::string name );
+	std::string const & getType() const;
 };
 
-Zombie	*newZombie( std::string name );
-void	randomChump( std::string name );
+
+
 
 #endif

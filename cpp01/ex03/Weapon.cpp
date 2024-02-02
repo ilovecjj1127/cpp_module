@@ -1,22 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   newZombie.cpp                                      :+:    :+:            */
+/*   Weapon.cpp                                         :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: jiajchen <jiajchen@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2024/02/02 09:48:09 by jiajchen      #+#    #+#                 */
-/*   Updated: 2024/02/02 10:52:30 by jiajchen      ########   odam.nl         */
+/*   Created: 2024/02/02 15:24:21 by jiajchen      #+#    #+#                 */
+/*   Updated: 2024/02/02 15:30:01 by jiajchen      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include "Weapon.hpp"
 
-Zombie	*newZombie( std::string name )
+Weapon::Weapon(/* args */)
 {
-	Zombie *zombie;
+}
 
-	zombie = new Zombie;
-	zombie->setName(name);
-	return (zombie);
+Weapon::~Weapon()
+{
+	std::cout << RED "Destructor Weapon" RESET << std::endl;
+}
+
+std::string const & Weapon::getType() const
+{
+	return (this->_type);
 }

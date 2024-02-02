@@ -6,7 +6,7 @@
 /*   By: jiajchen <jiajchen@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/02/01 16:58:08 by jiajchen      #+#    #+#                 */
-/*   Updated: 2024/02/02 12:33:57 by jiajchen      ########   odam.nl         */
+/*   Updated: 2024/02/02 13:54:44 by jiajchen      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,6 @@ public:
 	void	setName( std::string name );
 };
 
-Zombie	*newZombie( std::string name );
-void	randomChump( std::string name );
+Zombie	*zombieHorde( int N, std::string name );
 
 #endif

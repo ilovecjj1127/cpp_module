@@ -6,7 +6,7 @@
 /*   By: jiajchen <jiajchen@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/01/29 11:34:26 by jiajchen      #+#    #+#                 */
-/*   Updated: 2024/02/01 11:42:30 by jiajchen      ########   odam.nl         */
+/*   Updated: 2024/02/02 14:40:06 by jiajchen      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ int	main()
 			phonebook.search_contact();
 		else if (input == "EXIT")
 			break;
+		std::cout << phonebook.
 	}
 	return (0);
 }

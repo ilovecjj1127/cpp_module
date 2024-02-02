@@ -1,14 +1,14 @@
 # SETUP
-NAME		:=	zombie
+NAME		:=	weapon
 
 CPP			:=	c++
 CPPFLAGS	:=	-Wall -Wextra -Werror -std=c++98
 RM			:=	rm -rf
 
-SRC			:=	Zombie.cpp \
-				newZombie.cpp \
-				randomChump.cpp \
-				main.cpp
+SRC			:=	main.cpp \
+				Weapon.cpp \
+				HumanA.cpp \
+				HumanB.cpp \
 
 OBJ_DIR		:=	obj
 OBJ			:=	$(SRC:%.cpp=$(OBJ_DIR)/%.o)

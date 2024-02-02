@@ -1,22 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   newZombie.cpp                                      :+:    :+:            */
+/*   main.cpp                                           :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: jiajchen <jiajchen@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2024/02/02 09:48:09 by jiajchen      #+#    #+#                 */
-/*   Updated: 2024/02/02 10:52:30 by jiajchen      ########   odam.nl         */
+/*   Created: 2024/02/02 15:23:38 by jiajchen      #+#    #+#                 */
+/*   Updated: 2024/02/02 15:23:50 by jiajchen      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include "Weapon.hpp"
 
-Zombie	*newZombie( std::string name )
+int	main(void)
 {
-	Zombie *zombie;
-
-	zombie = new Zombie;
-	zombie->setName(name);
-	return (zombie);
+	
 }
