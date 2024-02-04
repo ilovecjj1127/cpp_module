@@ -5,32 +5,29 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jessie <jessie@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/02 15:23:38 by jiajchen          #+#    #+#             */
-/*   Updated: 2024/02/03 15:07:41 by jessie           ###   ########.fr       */
+/*   Created: 2024/02/03 15:08:07 by jessie            #+#    #+#             */
+/*   Updated: 2024/02/03 16:40:24 by jessie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "HumanA.hpp"
-#include "HumanB.hpp"
+#include <iostream>
+#include <fstream>
+#include <string>
 
-int	main(void)
+int	main(int argc, char **argv)
 {
-	{
-		Weapon	club = Weapon("crude spiked club");
-		
-		HumanA	bob("Bob", club);
-		bob.attack();
-		club.setType("some other type of club");
-		bob.attack();
-	}
-	{
-		Weapon	club = Weapon("crude spiked club");
-		
-		HumanB	jim("Jim");
-		jim.setWeapon(club);
-		jim.attack();
-		club.setType("some other type of club");
-		jim.attack();
-	}
-	return (0);
+	std::string	in = argv[1];
+	std::string out = in.append(".replace");
+	std::string	s1 = argv[2];
+	std::string	s2 = argv[3];
+	
+	std::ifstream	ifs(in);
+	if (!ifs.is_open())
+		return (1);
+	if (std::getline(ifs, line))
+
+
+	
+	std::ofstream	ofs(out);
+	
 }
