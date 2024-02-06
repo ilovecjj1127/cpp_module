@@ -5,19 +5,19 @@
 /*                                                     +:+                    */
 /*   By: jiajchen <jiajchen@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2024/02/06 10:38:29 by jiajchen      #+#    #+#                 */
-/*   Updated: 2024/02/06 10:55:51 by jiajchen      ########   odam.nl         */
+/*   Created: 2024/02/05 16:28:20 by jiajchen      #+#    #+#                 */
+/*   Updated: 2024/02/05 16:31:03 by jiajchen      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Harl.hpp"
+#include "Sed.hpp"
 
-int	main(void)
+int	main(int argc, char **argv)
 {
-	Harl	autoH;
-	autoH.complain("DEBUG");
-	autoH.complain("INFO");
-	autoH.complain("WARNING");
-	autoH.complain("ERROR");
+	if (argc != 4)
+		return (1);
+	
+	Sed	replace((std::string)argv[1], (std::string)argv[2], (std::string)argv[3]);
+	replace.replaceFile();
 	return (0);
 }

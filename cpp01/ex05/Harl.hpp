@@ -6,7 +6,7 @@
 /*   By: jiajchen <jiajchen@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/02/05 14:20:45 by jiajchen      #+#    #+#                 */
-/*   Updated: 2024/02/05 18:21:51 by jiajchen      ########   odam.nl         */
+/*   Updated: 2024/02/06 10:10:37 by jiajchen      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,7 @@ public:
 	Harl(/* args */);
 	~Harl();
 	void	complain( std::string level );
-	//use pointers to member functions
-	//https://websites.umich.edu/~eecs381/handouts/Pointers_to_memberfuncs.pdf
+	
 };
 
 

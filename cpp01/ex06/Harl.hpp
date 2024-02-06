@@ -1,23 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   main.cpp                                           :+:    :+:            */
+/*   Harl.hpp                                           :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: jiajchen <jiajchen@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2024/02/06 10:38:29 by jiajchen      #+#    #+#                 */
-/*   Updated: 2024/02/06 10:55:51 by jiajchen      ########   odam.nl         */
+/*   Created: 2024/02/05 14:20:45 by jiajchen      #+#    #+#                 */
+/*   Updated: 2024/02/06 12:25:45 by jiajchen      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Harl.hpp"
+#ifndef HARL_HPP
+# define HARL_HPP
 
-int	main(void)
+#define RED "\033[91m"
+#define GREEN "\033[92m"
+#define YELLOW "\033[93m"
+#define BLUE "\033[94m"
+#define PINK "\033[95m"
+#define RESET "\033[0m"
+
+#include <iostream>
+
+class Harl
 {
-	Harl	autoH;
-	autoH.complain("DEBUG");
-	autoH.complain("INFO");
-	autoH.complain("WARNING");
-	autoH.complain("ERROR");
-	return (0);
-}
+private:
+	void	debug( void );
+	void	info( void );
+	void	warning( void );
+	void	error( void );
+	
+public:
+	Harl(/* args */);
+	~Harl();
+	void	complain( std::string level );
+	
+};
+
+
+
+
+#endif

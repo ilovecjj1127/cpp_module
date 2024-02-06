@@ -5,19 +5,20 @@
 /*                                                     +:+                    */
 /*   By: jiajchen <jiajchen@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2024/02/06 10:38:29 by jiajchen      #+#    #+#                 */
-/*   Updated: 2024/02/06 10:55:51 by jiajchen      ########   odam.nl         */
+/*   Created: 2024/02/06 10:53:24 by jiajchen      #+#    #+#                 */
+/*   Updated: 2024/02/06 12:24:16 by jiajchen      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Harl.hpp"
 
-int	main(void)
+int	main(int argc, char **argv)
 {
-	Harl	autoH;
-	autoH.complain("DEBUG");
-	autoH.complain("INFO");
-	autoH.complain("WARNING");
-	autoH.complain("ERROR");
-	return (0);
+	if (argc != 2)
+	{
+		std::cout << RED "incorrect arguments" RESET << std::endl;
+		return (1);
+	}
+	Harl	harl;
+	harl.complain(argv[1]);
 }
