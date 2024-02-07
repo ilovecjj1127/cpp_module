@@ -9,7 +9,7 @@ scope resolution operator `::`
 	3. access a class's static variables
 
 std::string is a class and std is the namespace where standard library classes and functions are defined.
-`for (char& c: result)` uses a reference(`&`) to the characters
+`for (char& c: result)` uses a reference(`&`) to the characters (c++11)
 
 
 ## rules
@@ -20,3 +20,9 @@ std::string is a class and std is the namespace where standard library classes a
 - output ended by a new-line character
 - new = allocate memory
 - cpp02~09: Orthodox Canonical Form
+
+## concept
+
+- Ad-hoc polymorphism (vs parametric): method overloading
+- orthodox canonical form
+- operator overload
