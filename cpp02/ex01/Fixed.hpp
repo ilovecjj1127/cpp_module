@@ -6,15 +6,10 @@
 /*   By: jiajchen <jiajchen@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/02/06 12:51:42 by jiajchen      #+#    #+#                 */
-/*   Updated: 2024/02/08 13:40:08 by jiajchen      ########   odam.nl         */
+/*   Updated: 2024/02/08 13:45:31 by jiajchen      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-/**
- * Orthodox Canonical Form to represent a fixed-point number
- * static constant integer
-*/
 
 #ifndef FIXED_HPP
 # define FIXED_HPP
@@ -35,12 +30,19 @@ private:
 	static const int	_bits = 8;
 public:
 	Fixed();
+	Fixed( const int value );
+	Fixed( const float value );
 	Fixed( const Fixed &fixed );
-	Fixed & operator = ( const Fixed &fixed );
 	~Fixed();
 	
+	Fixed & operator = ( const Fixed &fixed );
+	
+	float	toFloat( void ) const;
+	int		toInt( void ) const;
 	int		getRawBits( void ) const;
 	void	setRawBits( int const raw );
 };
+
+std::ostream & operator << ( std::ostream &cout, const Fixed &fixed );
 
 #endif

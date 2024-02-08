@@ -6,7 +6,7 @@
 /*   By: jiajchen <jiajchen@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/02/07 11:57:15 by jiajchen      #+#    #+#                 */
-/*   Updated: 2024/02/08 13:18:15 by jiajchen      ########   odam.nl         */
+/*   Updated: 2024/02/08 15:29:43 by jiajchen      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,21 @@
 
 int	main( void )
 {
-	Fixed	a;
-	Fixed	b( a );
-	Fixed	c;
-
-	c = b;
-	std::cout << a.getRawBits() << std::endl;
-	std::cout << b.getRawBits() << std::endl;
-	std::cout << c.getRawBits() << std::endl;
+	Fixed		a;
+	// Fixed const	b( 10 );
+	Fixed const	c( 42.45f );
+	// Fixed const	d( b );
+	
+	// a = Fixed( 1234.4321f );
+	
+	// std::cout << "a is " << a << std::endl;
+	// std::cout << "b is " << b << std::endl;
+	// std::cout << "c is " << c << std::endl;
+	// std::cout << "d is " << d << std::endl;
+	// std::cout << "a is " << a.toInt() << " as integer" << std::endl;
+	// std::cout << "b is " << b.toInt() << " as integer" << std::endl;
+	// std::cout << "c is " << c.toInt() << " as integer" << std::endl;
+	// std::cout << "d is " << d.toInt() << " as integer" << std::endl;
 
 	return (0);
 }
