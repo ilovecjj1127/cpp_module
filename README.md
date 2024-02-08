@@ -24,5 +24,10 @@ std::string is a class and std is the namespace where standard library classes a
 ## concept
 
 - Ad-hoc polymorphism (vs parametric): method overloading
-- orthodox canonical form
+- orthodox canonical form: https://cplusplus.com/articles/y8hv0pDG/
+	- A default constructor
+	- A copy constructor: used in the implementation of call-by-value parameters
+		deep copies that the instance i
+	- An assignment operator: used to assign one value to another
+	- A destructor
 - operator overload
