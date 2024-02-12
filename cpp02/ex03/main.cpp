@@ -6,34 +6,33 @@
 /*   By: jiajchen <jiajchen@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/02/07 11:57:15 by jiajchen      #+#    #+#                 */
-/*   Updated: 2024/02/12 12:40:19 by jiajchen      ########   odam.nl         */
+/*   Updated: 2024/02/12 18:20:38 by jiajchen      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
+#include "Point.hpp"
 
 int	main( void )
 {
 	Fixed		a;
-	std::cout << "\n";
-	Fixed const	b( 10 );
-	std::cout << "\n";
-	Fixed const	c( 42.42f );
-	std::cout << "\n";
-	Fixed const	d( b );
-	std::cout << "\n";
-	
-	a = Fixed( 1234.4321f );
-	std::cout << "\n";
+	Fixed const	b( Fixed( 5.05f ) * Fixed( 2 ) );
 	
 	std::cout << "a is " << a << std::endl;
-	std::cout << "b is " << b << std::endl;
-	std::cout << "c is " << c << std::endl;
-	std::cout << "d is " << d << std::endl;
-	std::cout << "a is " << a.toInt() << " as integer" << std::endl;
-	std::cout << "b is " << b.toInt() << " as integer" << std::endl;
-	std::cout << "c is " << c.toInt() << " as integer" << std::endl;
-	std::cout << "d is " << d.toInt() << " as integer" << std::endl;
-
+	std::cout << "++a is " << ++a << std::endl;
+	std::cout << "a is " << a << std::endl;
+	std::cout << "a++ is " << a++ << std::endl;
+	std::cout << "a is " << a << std::endl;
+	
+	std::cout << "\nb is " << b << std::endl;
+	std::cout << "max of a and b is " << Fixed::max( a, b ) << std::endl;
+	std::cout << "min of a and b is " << Fixed::min( a, b ) << std::endl;
+	
+	Fixed	c( 42.42f );
+	Fixed	d( 5 );
+	std::cout << c / d << std::endl;
+	std::cout << c + d << std::endl;
+	std::cout << c - d << std::endl;
+	
 	return (0);
 }

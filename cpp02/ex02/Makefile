@@ -11,7 +11,7 @@ SRC			:=	Fixed.cpp \
 OBJ_DIR		:=	obj
 OBJ			:=	$(SRC:%.cpp=$(OBJ_DIR)/%.o)
 
-HEADS		:= $(wildcard *.hpp)
+HEADS		:=	$(wildcard *.hpp)
 
 # RULES
 $(OBJ_DIR)/%.o: %.cpp

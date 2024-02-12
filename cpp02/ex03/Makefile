@@ -1,17 +1,19 @@
 # SETUP
-NAME		:=	fixed
+NAME		:=	bsp
 
 CPP			:=	c++
 CPPFLAGS	:=	-Wall -Wextra -Werror -std=c++98
 RM			:=	rm -rf
 
 SRC			:=	Fixed.cpp \
-				main.cpp
+				main.cpp \
+				Point.cpp \
+				bsp.cpp
 
 OBJ_DIR		:=	obj
 OBJ			:=	$(SRC:%.cpp=$(OBJ_DIR)/%.o)
 
-HEADS		:= $(wildcard *.hpp)
+HEADS		:=	$(wildcard *.hpp)
 
 # RULES
 $(OBJ_DIR)/%.o: %.cpp
