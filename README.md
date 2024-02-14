@@ -31,3 +31,5 @@ std::string is a class and std is the namespace where standard library classes a
 	- An assignment operator: used to assign one value to another
 	- A destructor
 - operator overload
+
+## inheritence
