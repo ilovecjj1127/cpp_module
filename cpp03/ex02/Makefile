@@ -1,5 +1,5 @@
 # SETUP
-NAME		:=	scavtrap
+NAME		:=	fragtrap
 
 CPP			:=	c++
 CPPFLAGS	:=	-Wall -Wextra -Werror -std=c++98
@@ -7,6 +7,7 @@ RM			:=	rm -rf
 
 SRC			:=	ClapTrap.cpp \
 				ScavTrap.cpp \
+				FragTrap.cpp \
 				main.cpp
 
 OBJ_DIR		:=	obj
