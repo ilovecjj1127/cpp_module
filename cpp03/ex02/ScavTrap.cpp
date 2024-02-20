@@ -6,15 +6,14 @@
 /*   By: jiajchen <jiajchen@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/02/14 12:44:10 by jiajchen      #+#    #+#                 */
-/*   Updated: 2024/02/16 11:42:53 by jiajchen      ########   odam.nl         */
+/*   Updated: 2024/02/20 11:48:42 by jiajchen      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
 
-ScavTrap::ScavTrap( void )
+ScavTrap::ScavTrap( void ): ClapTrap("", 100, 50, 20)
 {
-	ClapTrap("", 100, 50, 20);
 	std::cout << GREEN "Default ScavTrap called " RESET << std::endl;
 }
 

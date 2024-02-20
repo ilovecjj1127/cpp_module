@@ -6,7 +6,7 @@
 /*   By: jiajchen <jiajchen@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/02/16 14:16:59 by jiajchen      #+#    #+#                 */
-/*   Updated: 2024/02/16 14:55:43 by jiajchen      ########   odam.nl         */
+/*   Updated: 2024/02/20 11:16:31 by jiajchen      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ class DiamondTrap: public ScavTrap, public FragTrap
 {
 private:
 	std::string	_name;
+
 public:
 	DiamondTrap( void );
 	DiamondTrap( const std::string name );

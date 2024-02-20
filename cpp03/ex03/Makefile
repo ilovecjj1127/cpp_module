@@ -2,7 +2,7 @@
 NAME		:=	diamondtrap
 
 CPP			:=	c++
-CPPFLAGS	:=	-Wall -Wextra -Werror -std=c++98
+CPPFLAGS	:=	-Wall -Wextra -Werror -Wshadow -std=c++98
 RM			:=	rm -rf
 
 SRC			:=	ClapTrap.cpp \

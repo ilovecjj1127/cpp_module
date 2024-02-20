@@ -6,25 +6,19 @@
 /*   By: jiajchen <jiajchen@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/02/16 14:15:42 by jiajchen      #+#    #+#                 */
-/*   Updated: 2024/02/16 15:30:54 by jiajchen      ########   odam.nl         */
+/*   Updated: 2024/02/20 14:05:57 by jiajchen      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "DiamondTrap.hpp"
 
-DiamondTrap::DiamondTrap( void ): ClapTrap("_clap_name"), _name("")
+DiamondTrap::DiamondTrap( void ): ClapTrap("_clap_name", 100, 50, 30), _name("")
 {
-	_hitPoints = FragTrap::_hitPoints;
-	_energyPoints = ScavTrap::_energyPoints;
-	_attackDamage = FragTrap::_attackDamage;
 	std::cout << RED "Default DiamondTrap called " RESET << std::endl;
 }
 
-DiamondTrap::DiamondTrap( std::string name ): ClapTrap(name + "_clap_name"), _name(name)
+DiamondTrap::DiamondTrap( std::string name ): ClapTrap(name + "_clap_name", 100, 50, 30), _name(name)
 {
-	_hitPoints = FragTrap::_hitPoints;
-	_energyPoints = ScavTrap::_energyPoints;
-	_attackDamage = FragTrap::_attackDamage;
 	std::cout << RED "Constructor DiamondTrap: " << this->_name << RESET << std::endl;
 }
 
