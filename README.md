@@ -33,3 +33,9 @@ std::string is a class and std is the namespace where standard library classes a
 - operator overload
 
 ## inheritence
+
+## virtual
+
+pure virtual class == pure abstract class == interface
+Classes that contains one or more pure virtual functions cannot be instantiated directly and must be inherited
+`std::string const &type` == `const std::string &type`: the referenced object cannot be modified through the reference
