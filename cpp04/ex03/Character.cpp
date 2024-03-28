@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   Character.cpp                                      :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: jessie <jessie@student.42.fr>              +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/01 13:47:47 by jessie            #+#    #+#             */
-/*   Updated: 2024/03/01 15:58:33 by jessie           ###   ########.fr       */
+/*                                                        ::::::::            */
+/*   Character.cpp                                      :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: jessie <jessie@student.42.fr>                +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2024/03/01 13:47:47 by jessie        #+#    #+#                 */
+/*   Updated: 2024/03/05 14:44:46 by jiajchen      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ Character::~Character()
 	std::cout << "Character destructor called" << std::endl;
 }
 
-/* Is this deep copy????????? */
+/* Is this deep copy????????? You can delete nullptr */
 Character	&Character::operator=( const Character &cpy )
 {
 	if (this == &cpy)
@@ -83,7 +83,10 @@ void	Character::unequip( int idx )
 void	Character::use( int idx, ICharacter &target )
 {
 	if (_materias[idx] == nullptr)
+	{
+		std::cout << "No such Materia" << std::endl;
 		return ;
+	}
 	std::cout << "-----use " << idx <<"th materia----" << std::endl;
 	_materias[idx]->use(target);
 }
