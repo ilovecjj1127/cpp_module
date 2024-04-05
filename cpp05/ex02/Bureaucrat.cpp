@@ -6,11 +6,12 @@
 /*   By: jiajchen <jiajchen@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/03/28 12:05:25 by jiajchen      #+#    #+#                 */
-/*   Updated: 2024/04/03 12:52:51 by jiajchen      ########   odam.nl         */
+/*   Updated: 2024/04/04 18:16:33 by jiajchen      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "AForm.hpp"
 
 Bureaucrat::Bureaucrat(): _name(""), _grade(150)
 {
@@ -20,9 +21,9 @@ Bureaucrat::Bureaucrat(): _name(""), _grade(150)
 Bureaucrat::Bureaucrat( const std::string name, int grade ): _name(name), _grade(grade)
 {
 	if (_grade < 1)
-		throw (GradeTooHighException());
+		throw (Bureaucrat::GradeTooHighException());
 	else if (_grade > 150)
-		throw (GradeTooLowException());
+		throw (Bureaucrat::GradeTooLowException());
 	std::cout << "Constructor Bureaucrat: " << _name << " with grade: " << _grade << std::endl;
 }
 
@@ -60,24 +61,53 @@ void	Bureaucrat::upGrade()
 {
 	this->_grade--;
 	if (this->_grade < 1)
-		throw (GradeTooHighException());
+		throw (Bureaucrat::GradeTooHighException());
 }
 
 void	Bureaucrat::downGrade()
 {
 	this->_grade++;
 	if (this->_grade > 150)
-		throw (GradeTooLowException());
+		throw (Bureaucrat::GradeTooLowException());
+}
+
+void	Bureaucrat::signForm( AForm &form )
+{
+	try
+	{
+		form.beSigned(*this);
+		std::cout << YELLOW << this->_name << " signed " << form.getName() << RESET << std::endl;
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << RED << this->_name << " couldn't sign " << form.getName();
+		std::cerr << " because " << e.what() << RESET << std::endl;
+	}
+}
+
+void	Bureaucrat::executeForm( AForm const &form )
+{
+	try
+	{
+		form.execute(*this);
+		std::cout <<YELLOW << this->_name << " executed " << form.getName() << RESET << std::endl;
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << RED << this->_name << " couldn't execute " << form.getName();
+		std::cerr << " because " << e.what() << RESET << std::endl;
+	}
+	
 }
 
 const char	*Bureaucrat::GradeTooHighException::what( void ) const throw()
 {
-	return (RED "Grade is too High!" RESET);
+	return (RED "Bureaucrat: Grade is too High!" RESET);
 }
 
 const char	*Bureaucrat::GradeTooLowException::what( void ) const throw()
 {
-	return (RED "Grade is too Low!" RESET);
+	return (RED "Bureaucrat: Grade is too Low!" RESET);
 }
 
 std::ostream	&operator<<( std::ostream &cout, const Bureaucrat &bureaucrat )

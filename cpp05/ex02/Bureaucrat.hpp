@@ -6,23 +6,20 @@
 /*   By: jiajchen <jiajchen@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/03/27 12:25:41 by jiajchen      #+#    #+#                 */
-/*   Updated: 2024/04/03 10:39:28 by jiajchen      ########   odam.nl         */
+/*   Updated: 2024/04/04 18:13:28 by jiajchen      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef BUREAUCRAT_HPP
 # define BUREAUCRAT_CPP
 
-# define RED "\033[91m"
-# define GREEN "\033[92m"
-# define YELLOW "\033[93m"
-# define BLUE "\033[94m"
-# define PINK "\033[95m"
-# define RESET "\033[0m"
-
 # include <iostream>
 # include <string>
 # include <exception>
+
+#include "Color.hpp"
+
+class AForm;
 
 class Bureaucrat
 {
@@ -40,6 +37,8 @@ public:
 
 	void				upGrade();
 	void				downGrade();
+	void				signForm( AForm &form );
+	void				executeForm( AForm const &form );
 	
 	const std::string	getName( void ) const;
 	int					getGrade( void ) const;

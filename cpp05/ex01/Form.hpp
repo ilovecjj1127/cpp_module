@@ -1,49 +1,53 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   Bureaucrat.hpp                                     :+:    :+:            */
+/*   Form.hpp                                           :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: jiajchen <jiajchen@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2024/03/27 12:25:41 by jiajchen      #+#    #+#                 */
-/*   Updated: 2024/04/03 10:39:28 by jiajchen      ########   odam.nl         */
+/*   Created: 2024/04/03 11:24:41 by jiajchen      #+#    #+#                 */
+/*   Updated: 2024/04/04 14:53:32 by jiajchen      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BUREAUCRAT_HPP
-# define BUREAUCRAT_CPP
+#ifndef FORM_HPP
+# define FORM_HPP
 
-# define RED "\033[91m"
-# define GREEN "\033[92m"
-# define YELLOW "\033[93m"
-# define BLUE "\033[94m"
-# define PINK "\033[95m"
-# define RESET "\033[0m"
+#include <iostream>
+#include <string>
 
-# include <iostream>
-# include <string>
-# include <exception>
+#include "Color.hpp"
 
-class Bureaucrat
+class Bureaucrat;
+
+class Form
 {
 private:
-	std::string	_name;
-	int			_grade;
+	const std::string	_name;
+	bool				_is_signed;
+	const int			_grade_sign;
+	const int			_grade_exec;
 
 public:
-	Bureaucrat();
-	Bureaucrat( const std::string name, int grade );
-	Bureaucrat( const Bureaucrat &cpy );
-	~Bureaucrat();
-	
-	Bureaucrat			&operator=( const Bureaucrat &cpy );
+	/* Constructors & Destructors */
+	Form();
+	Form( const std::string name, const int gradesign, const int gradeexe );
+	Form( const Form &cpy );
+	~Form();
 
-	void				upGrade();
-	void				downGrade();
-	
+	/* Operators */
+	Form	&operator=( const Form &cpy );
+
+	/* Member functions */
+	void	beSigned( const Bureaucrat &bur );
+
+	/* getter and setter*/
 	const std::string	getName( void ) const;
-	int					getGrade( void ) const;
-
+	bool				checkSigned( void ) const;
+	int					getExecGrade( void ) const;
+	int					getSignGrade( void ) const;
+	
+	/* exceptions */
 	class	GradeTooHighException: public std::exception
 	{
 		public:
@@ -56,6 +60,6 @@ public:
 	};
 };
 
-std::ostream & operator << ( std::ostream &cout, const Bureaucrat &bureaucrat );
+std::ostream &operator<<( std::ostream &cout, const Form &form );
 
 #endif

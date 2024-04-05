@@ -1,11 +1,15 @@
 # SETUP
-NAME		:=	Bureaucrat
+NAME		:=	Form
 
 CPP			:=	c++
 CPPFLAGS	:=	-Wall -Wextra -Werror
 RM			:=	rm -rf
 
 SRC			:=	Bureaucrat.cpp \
+				AForm.cpp \
+				ShrubberyCreationForm.cpp \
+				RobotomyRequestForm.cpp \
+				PresidentialPardonForm.cpp \
 				main.cpp
 
 OBJ_DIR		:=	obj
