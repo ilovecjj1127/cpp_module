@@ -6,7 +6,7 @@
 /*   By: jiajchen <jiajchen@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/04/04 15:56:49 by jiajchen      #+#    #+#                 */
-/*   Updated: 2024/04/08 14:25:47 by jiajchen      ########   odam.nl         */
+/*   Updated: 2024/04/09 11:26:45 by jiajchen      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ public:
 
 	std::string	getTarget( void ) const;
 	void		execute( const Bureaucrat &executor ) const;
+	static AForm	*makeForm( AForm *form, std::string type, std::string target );
 };
 
 std::ostream	&operator<<( std::ostream &cout, const ShrubberyCreationForm &form );

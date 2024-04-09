@@ -6,7 +6,7 @@
 /*   By: jiajchen <jiajchen@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/04/03 11:24:41 by jiajchen      #+#    #+#                 */
-/*   Updated: 2024/04/09 12:30:42 by jiajchen      ########   odam.nl         */
+/*   Updated: 2024/04/09 12:30:30 by jiajchen      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ public:
 	/* Member functions */
 	void			beSigned( const Bureaucrat &bur );
 	virtual void	execute( const Bureaucrat &executor ) const;
+	static AForm	*makeForm( std::string type, std::string target );
 
 	/* getter and setter*/
 	const std::string	getName( void ) const;

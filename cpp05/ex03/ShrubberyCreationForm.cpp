@@ -6,7 +6,7 @@
 /*   By: jiajchen <jiajchen@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/04/04 17:49:39 by jiajchen      #+#    #+#                 */
-/*   Updated: 2024/04/08 14:06:43 by jiajchen      ########   odam.nl         */
+/*   Updated: 2024/04/09 12:59:03 by jiajchen      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,13 @@ void	ShrubberyCreationForm::execute( const Bureaucrat &executor ) const
 	outFile.close();
 	
 	std::cout << executor.getName() << " successfully created a shrubbery!" << std::endl;
+}
+
+AForm	*ShrubberyCreationForm::makeForm( AForm *form, std::string type, std::string target )
+{
+	if (form == NULL && type == "shrubbery creation")
+		return (new ShrubberyCreationForm(target));
+	return (form);
 }
 
 std::ostream	&operator<<( std::ostream &cout, const ShrubberyCreationForm &form )

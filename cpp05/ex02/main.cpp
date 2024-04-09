@@ -6,33 +6,38 @@
 /*   By: jiajchen <jiajchen@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/04/03 10:15:20 by jiajchen      #+#    #+#                 */
-/*   Updated: 2024/04/05 17:06:24 by jiajchen      ########   odam.nl         */
+/*   Updated: 2024/04/08 14:08:22 by jiajchen      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Bureaucrat.hpp"
 #include "AForm.hpp"
+#include "Bureaucrat.hpp"
 #include "ShrubberyCreationForm.hpp"
 #include "PresidentialPardonForm.hpp"
 #include "RobotomyRequestForm.hpp"
 
 int	main(void)
 {
-	std::cout << PINK "\n--Create three forms and Bureaucrats--" RESET << std::endl;
+	std::cout << PINK "\n--Create three Forms and Bureaucrats--" RESET << std::endl;
 	ShrubberyCreationForm	shrubbery("Home");
-	RobotomyRequestForm		robotomy("noisy");
-	PresidentialPardonForm	president("zaphod beeblebrox");
+	RobotomyRequestForm		robotomy("Human");
+	PresidentialPardonForm	pardon("Assistant");
 	Bureaucrat				Adam("Adam", 150);
 	Bureaucrat				Bob("Bob", 3);
-	Bureaucrat				Trump("Trump", 150);
+	Bureaucrat				Carol("Carol", 50);
 	
 	
-	std::cout << PINK "\n--Throw exceptions when constructing a form with the grades out of boundary--" RESET << std::endl;
+	std::cout << PINK "\n--Throw exceptions when executing without being signed--" RESET << std::endl;
 	{
 		try
 		{
-			Form	testForm("testForm", 0, 100);
-			std::cout << testForm << std::endl;
+			std::cout << shrubbery << std::endl;
+			std::cout << robotomy << std::endl;
+			std::cout << pardon << std::endl;
+			std::cout << Adam << std::endl;
+			Adam.executeForm(shrubbery);
+			Adam.executeForm(robotomy);
+			Adam.executeForm(pardon);
 		}
 		catch(const std::exception& e)
 		{
@@ -40,17 +45,13 @@ int	main(void)
 		}
 	}
 	
-	std::cout << PINK "\n--Create a Form correctly--" RESET << std::endl;
+	std::cout << PINK "\n--Sign the form and Execute without enough grade--" RESET << std::endl;
 	{
 		try
 		{
-			Bureaucrat	Adam("Adam", 80);
-			Form		formA("A", 100, 20);
-			std::cout << Adam << std::endl;
-			std::cout << formA << std::endl;
-			
-			Adam.signForm(formA);
-			std::cout << formA << std::endl;
+			shrubbery.beSigned(Bob);
+			std::cout << shrubbery << std::endl;
+			shrubbery.execute(Adam);
 		}
 		catch(const std::exception& e)
 		{
@@ -58,17 +59,21 @@ int	main(void)
 		}
 	}
 
-	std::cout << PINK "\n--throw exception when signing failed--" RESET << std::endl;
+	std::cout << PINK "\n--Sign forms and execute them--" RESET << std::endl;
 	{
 		try
 		{
-			Bureaucrat	Bob("Bob", 100);
-			Form		formB("B", 50, 20);
-			std::cout << Bob << std::endl;
-			std::cout << formB << std::endl;
+			robotomy.beSigned(Carol);
+			pardon.beSigned(Bob);
+			std::cout << robotomy << std::endl;
+			std::cout << pardon << std::endl;
 			
-			Bob.signForm(formB);
-			std::cout << formB << std::endl;
+			std::cout << "\n ----------create a shrubbery---------- \n";
+			shrubbery.execute(Carol);
+			std::cout << "\n ----------robotomy request---------- \n";
+			robotomy.execute(Bob);
+			std::cout << "\n ----------presidential pardon---------- \n";
+			pardon.execute(Bob);
 		}
 		catch(const std::exception& e)
 		{

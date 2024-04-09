@@ -6,12 +6,15 @@
 /*   By: jiajchen <jiajchen@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/04/03 11:24:28 by jiajchen      #+#    #+#                 */
-/*   Updated: 2024/04/09 13:04:20 by jiajchen      ########   odam.nl         */
+/*   Updated: 2024/04/09 13:04:05 by jiajchen      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AForm.hpp"
 #include "Bureaucrat.hpp"
+#include "ShrubberyCreationForm.hpp"
+#include "PresidentialPardonForm.hpp"
+#include "RobotomyRequestForm.hpp"
 
 AForm::AForm(): _name(""), _is_signed(false), _grade_sign(0), _grade_exec(0)
 {
@@ -69,6 +72,17 @@ void	AForm::execute( const Bureaucrat &executor ) const
 		throw (AForm::FormNotSignedException());
 	else if (executor.getGrade() > this->_grade_exec)
 		throw (AForm::GradeTooLowException());
+}
+
+AForm	*AForm::makeForm( std::string type, std::string target )
+{
+	AForm	*form;
+
+	form = NULL;
+	form = PresidentialPardonForm::makeForm(form, type, target);
+	form = RobotomyRequestForm::makeForm(form, type, target);
+	form = ShrubberyCreationForm::makeForm(form, type, target);
+	return (form);
 }
 
 /* getters and setters */

@@ -6,7 +6,7 @@
 /*   By: jiajchen <jiajchen@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/04/04 18:23:03 by jiajchen      #+#    #+#                 */
-/*   Updated: 2024/04/08 14:20:02 by jiajchen      ########   odam.nl         */
+/*   Updated: 2024/04/09 12:59:08 by jiajchen      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,13 @@ void	RobotomyRequestForm::execute( const Bureaucrat &executor ) const
 		std::cout << BLUE << _target << " was successfully robotomized!" RESET << std::endl;
 	else
 		std::cout << RED << _target << " failed its robotomy" RESET << std::endl;
+}
+
+AForm	*RobotomyRequestForm::makeForm( AForm *form, std::string type, std::string target )
+{
+	if (form == NULL && type == "robotomy request")
+		return (new RobotomyRequestForm(target));
+	return (form);
 }
 
 std::ostream	&operator<<( std::ostream &cout, const RobotomyRequestForm &form )
