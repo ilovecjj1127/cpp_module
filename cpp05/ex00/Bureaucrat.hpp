@@ -6,12 +6,12 @@
 /*   By: jiajchen <jiajchen@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/03/27 12:25:41 by jiajchen      #+#    #+#                 */
-/*   Updated: 2024/04/03 10:39:28 by jiajchen      ########   odam.nl         */
+/*   Updated: 2024/04/09 15:46:02 by jiajchen      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef BUREAUCRAT_HPP
-# define BUREAUCRAT_CPP
+# define BUREAUCRAT_HPP
 
 # define RED "\033[91m"
 # define GREEN "\033[92m"

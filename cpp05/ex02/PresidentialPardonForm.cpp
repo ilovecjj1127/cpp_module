@@ -6,7 +6,7 @@
 /*   By: jiajchen <jiajchen@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/04/04 18:17:31 by jiajchen      #+#    #+#                 */
-/*   Updated: 2024/04/08 14:06:58 by jiajchen      ########   odam.nl         */
+/*   Updated: 2024/04/09 15:48:25 by jiajchen      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ void	PresidentialPardonForm::execute( const Bureaucrat &executor ) const
 {
 	AForm::execute(executor);
 	
-	std::cout << BLUE << _target << "has been pardoned by Zaphod Beeblebrox." RESET << std::endl;
+	std::cout << BLUE << _target << " has been pardoned by Zaphod Beeblebrox." RESET << std::endl;
 }
 
 std::ostream	&operator<<( std::ostream &cout, const PresidentialPardonForm &form )
