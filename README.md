@@ -41,3 +41,28 @@ std::string is a class and std is the namespace where standard library classes a
 pure virtual class == pure abstract class == interface
 Classes that contains one or more pure virtual functions cannot be instantiated directly and must be inherited
 `std::string const &type` == `const std::string &type`: the referenced object cannot be modified through the reference
+
+## Casting
+
+	1. Implicit Type Conversion
+	2. Explicit Type Conversion - Casting
+
+- static_cast
+	a. convert object from one type to another
+	b. pointer/reference from one type to a related type (down/up cast)
+- dynamic_cast: `yellowdog *py = dynamic_cast<yellowdog *>(pd)`
+	a. pointer/reference down casting
+	b. run-time type check. If succeed, assigned with goal. If not assigned with 0.
+	c. converting between polymorphic types (one of which is virtual function)
+- const_cast
+	pointer/reference with same types
+- reinterpret_cast
+	a. re-interpret the memory content of address with any type (between pointers)
+	b. most powerful but need to be careful. low-level
+- C-style casting: mixture of static, const,reinterpret casting
+
+C++ style casting: less usage error
+	a. narrowly specified purpose of each cast
+	b. run-time type check capability
+
+Singleton pattern, factory method pattern
