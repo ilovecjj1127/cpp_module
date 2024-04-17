@@ -55,7 +55,7 @@ Classes that contains one or more pure virtual functions cannot be instantiated 
 	b. run-time type check. If succeed, assigned with goal. If not assigned with 0.
 	c. converting between polymorphic types (one of which is virtual function)
 - const_cast
-	pointer/reference with same types
+	pointer/reference with same types: avoid use const cast!! means wrong design 
 - reinterpret_cast
 	a. re-interpret the memory content of address with any type (between pointers)
 	b. most powerful but need to be careful. low-level
@@ -64,5 +64,9 @@ Classes that contains one or more pure virtual functions cannot be instantiated 
 C++ style casting: less usage error
 	a. narrowly specified purpose of each cast
 	b. run-time type check capability
+
+cast_operators
+	define the cast inside of class
+	`operator int()	{return static_cast<int>(this->_v)};`
 
 Singleton pattern, factory method pattern

@@ -1,11 +1,11 @@
 # SETUP
-NAME		:=	serializer
+NAME		:=	identifier
 
 CPP			:=	c++
 CPPFLAGS	:=	-Wall -Wextra -Werror
 RM			:=	rm -rf
 
-SRC			:=	Serializer.cpp \
+SRC			:=	Types.cpp \
 				main.cpp
 
 OBJ_DIR		:=	obj
