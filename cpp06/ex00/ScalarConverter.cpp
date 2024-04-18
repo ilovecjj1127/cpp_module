@@ -6,7 +6,7 @@
 /*   By: jiajchen <jiajchen@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/04/10 12:11:34 by jiajchen      #+#    #+#                 */
-/*   Updated: 2024/04/17 11:37:23 by jiajchen      ########   odam.nl         */
+/*   Updated: 2024/04/18 11:01:36 by jiajchen      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -162,8 +162,8 @@ void	ScalarConverter::printDouble( const std::string &input )
 		std::cout << "int: " << static_cast<int>(d) << std::endl;
 	
 	std::cout << std::fixed << std::setprecision(1);
-	if (d > static_cast<double>(__FLT_MAX__) || d < static_cast<double>(__FLT_MIN__))
-		std::cout << "float: impossible" << std::endl;
+	if (d > static_cast<double>(FLT_MAX) || d < -static_cast<double>(FLT_MAX) || 
+		(d > -static_cast<double>(FLT_MIN) && d < static_cast<double>(FLT_MIN)))		std::cout << "float: impossible" << std::endl;
 	else
 		std::cout << "float: " << static_cast<float>(d) << "f" << std::endl;
 	

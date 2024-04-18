@@ -6,7 +6,7 @@
 /*   By: jiajchen <jiajchen@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/04/10 10:50:20 by jiajchen      #+#    #+#                 */
-/*   Updated: 2024/04/16 16:58:14 by jiajchen      ########   odam.nl         */
+/*   Updated: 2024/04/18 11:01:46 by jiajchen      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 #include <sstream>
 #include <string>
 #include <limits.h>
+#include <float.h>
 
 # define RED "\033[91m"
 # define GREEN "\033[92m"
