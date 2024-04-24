@@ -1,5 +1,5 @@
 # SETUP
-NAME		:=	identifier
+NAME		:=	iter
 
 CPP			:=	c++
 CPPFLAGS	:=	-Wall -Wextra -Werror

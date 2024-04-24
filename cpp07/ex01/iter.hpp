@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   whatever.hpp                                       :+:    :+:            */
+/*   iter.hpp                                           :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: jiajchen <jiajchen@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2024/04/18 12:06:39 by jiajchen      #+#    #+#                 */
-/*   Updated: 2024/04/24 16:33:26 by jiajchen      ########   odam.nl         */
+/*   Created: 2024/04/24 16:38:54 by jiajchen      #+#    #+#                 */
+/*   Updated: 2024/04/24 18:15:25 by jiajchen      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,23 +14,10 @@
 
 #include <iostream>
 
-template <typename T>
-void swap(T &x, T &y)
+template <typename T, typename F>
+void	iter(T *arr, size_t len, F f)
 {
-	T	temp = x;
-	
-	x = y;
-	y = temp;
-}
-
-template <typename T>
-T min(T &x, T &y)
-{
-	return (x < y) ? x : y;
-}
-
-template <typename T>
-T max(T &x, T &y)
-{
-	return (x > y) ? x : y;
+	for (size_t i = 0; i < len; i++){
+		f(arr[i]);
+	}
 }
