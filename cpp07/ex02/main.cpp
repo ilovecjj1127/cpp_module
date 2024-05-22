@@ -1,11 +1,14 @@
 #include <iostream>
-#include <Array.hpp>
+#include <ctime>
+#include <cstdlib>
+#include "Array.hpp"
 
-#define MAX_VAL 750
+#define MAX_VAL 10
 int main(int, char**)
 {
     Array<int> numbers(MAX_VAL);
     int* mirror = new int[MAX_VAL];
+
     srand(time(NULL));
     for (int i = 0; i < MAX_VAL; i++)
     {
@@ -13,10 +16,16 @@ int main(int, char**)
         numbers[i] = value;
         mirror[i] = value;
     }
+    std::cout << PINK "---------numbers-----------" RESET << std::endl;
+    std::cout << numbers << std::endl;
     //SCOPE
     {
         Array<int> tmp = numbers;
         Array<int> test(tmp);
+        std::cout << PINK "---------tmp-----------" RESET << std::endl;
+        std::cout << tmp << std::endl;
+        std::cout << PINK "---------test-----------" RESET << std::endl;
+        std::cout << test << std::endl;
     }
 
     for (int i = 0; i < MAX_VAL; i++)
