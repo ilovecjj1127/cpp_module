@@ -18,6 +18,13 @@ int main(int, char**)
 	}
 	std::cout << PINK "\n---------numbers-----------" RESET << std::endl;
 	std::cout << numbers << std::endl;
+	for (int i = 0; i < MAX_VAL; i++)
+	{
+		if (mirror[i] != numbers[i])
+		{
+			std::cerr << "didn't save the same value!!" << std::endl;
+		}
+	}
 	//SCOPE
 	{
 		Array<int> tmp = numbers;
@@ -33,14 +40,6 @@ int main(int, char**)
 		std::cout << "deep_copy not changed: "<< deep_copy << std::endl;
 	}
 
-	for (int i = 0; i < MAX_VAL; i++)
-	{
-		if (mirror[i] != numbers[i])
-		{
-			std::cerr << "didn't save the same value!!" << std::endl;
-			return 1;
-		}
-	}
 	try
 	{
 		numbers[-1] = 0;
