@@ -1,8 +1,8 @@
 # SETUP
-NAME		:=	array
+NAME		:=	easyfind
 
 CPP			:=	c++
-CPPFLAGS	:=	-Wall -Wextra -Werror -g
+CPPFLAGS	:=	-Wall -Wextra -Werror -g -std=c++11
 RM			:=	rm -rf
 
 SRC			:=	main.cpp

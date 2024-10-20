@@ -2,7 +2,7 @@
 NAME		:=	array
 
 CPP			:=	c++
-CPPFLAGS	:=	-Wall -Wextra -Werror -g
+CPPFLAGS	:=	-Wall -Wextra -Werror -std=c++11 -g 
 RM			:=	rm -rf
 
 SRC			:=	main.cpp
