@@ -1,11 +1,11 @@
 # SETUP
-NAME		:=	Span
+NAME		:=	MutantStack
 
 CPP			:=	c++
 CPPFLAGS	:=	-Wall -Wextra -Werror -std=c++11 -g 
 RM			:=	rm -rf
 
-SRC			:=	Span.cpp main.cpp
+SRC			:=	main.cpp
 
 OBJ_DIR		:=	obj
 OBJ			:=	$(SRC:%.cpp=$(OBJ_DIR)/%.o)
